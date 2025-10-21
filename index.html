@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Season - Thời trang bốn mùa</title>
+    
+    <!-- Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    
+    <!-- Local Files -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Welcome Modal -->
+    <div id="welcome-modal-overlay" class="fixed inset-0 bg-black bg-opacity-60 z-[1000] flex items-center justify-center opacity-0 invisible transition-opacity duration-300">
+        <div id="welcome-modal" class="bg-white rounded-lg shadow-2xl overflow-hidden w-full max-w-4xl grid grid-cols-1 md:grid-cols-2">
+            <div class="hidden md:block">
+                <img src="img/poster-qc.jpg" alt="Poster quảng cáo" class="w-full h-full object-cover">
+            </div>
+            <div class="p-8 md:p-12 relative">
+                <button id="close-welcome-modal-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 text-3xl transition-colors">&times;</button>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Chào mừng bạn đến với</h2>
+                <h1 id="modal-logo" class="text-4xl font-bold mb-6">4Season</h1>
+                <p class="text-gray-600 mb-8">Vui lòng chọn khu vực giao hàng mong muốn để chúng tôi phục vụ bạn tốt hơn.</p>
+                <div class="space-y-4 mb-8">
+                    <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-green-50 has-[:checked]:border-green-500 transition-all">
+                        <input type="radio" name="region" value="north" class="sr-only">
+                        <span class="flex-grow text-gray-700 font-medium">Miền Bắc</span>
+                        <span class="custom-radio"></span>
+                    </label>
+                     <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-green-50 has-[:checked]:border-green-500 transition-all">
+                        <input type="radio" name="region" value="central" class="sr-only">
+                        <span class="flex-grow text-gray-700 font-medium">Miền Trung</span>
+                        <span class="custom-radio"></span>
+                    </label>
+                     <label class="flex items-center p-4 border rounded-lg cursor-pointer hover:bg-gray-100 has-[:checked]:bg-green-50 has-[:checked]:border-green-500 transition-all">
+                        <input type="radio" name="region" value="south" class="sr-only" checked>
+                        <span class="flex-grow text-gray-700 font-medium">Miền Nam</span>
+                        <span class="custom-radio"></span>
+                    </label>
+                </div>
+                <button id="confirm-region-btn" class="w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                    Xác nhận
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-40 bg-white shadow-md">
+        <div class="bg-black text-white text-xs font-light">
+            <div class="container mx-auto px-6 h-8 flex justify-between items-center">
+                <a href="gioi-thieu.html" class="hover:text-gray-300"><i class="fas fa-map-marker-alt mr-2"></i>Hệ thống cửa hàng</a>
+                <span class="hidden md:block">Nhà phân phối chính hãng các thương hiệu quốc tế hàng đầu Việt Nam</span>
+                <a href="#" class="hover:text-gray-300"><i class="fas fa-globe mr-2"></i>Chọn khu vực</a>
+            </div>
+        </div>
+        <div class="border-b">
+             <div class="container mx-auto px-6 py-6 text-center">
+                <a href="index.html" id="main-logo" class="text-6xl tracking-widest">4SEASON</a>
+            </div>
+        </div>
+        <div class="border-b">
+            <div class="container mx-auto px-6 h-14 flex justify-between items-center text-sm font-medium text-gray-700">
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="text-green-600 text-lg"><i class="fas fa-home"></i></a>
+                    <a href="san-pham.html" class="hover:text-green-600 uppercase tracking-wider">Sản phẩm</a>
+                    <a href="new-arrival.html" class="hover:text-green-600 uppercase tracking-wider">New Arrival</a>
+                    <a href="san-pham.html" class="hover:text-green-600 uppercase tracking-wider">Best Choice</a>
+                </div>
+                <div class="flex items-center space-x-5">
+                    <div class="relative hidden lg:block">
+                        <input type="text" placeholder="Tìm sản phẩm, thương hiệu..." class="border rounded-full py-2 px-4 w-64 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-search"></i></span>
+                    </div>
+                    
+                    <a href="dang-nhap.html" class="text-gray-600 hover:text-green-600 text-xl"><i class="fas fa-user"></i></a>
+                    
+                    <a href="gio-hang.html" class="text-gray-600 hover:text-green-600 relative text-xl block">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </a>
+
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-green-500">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 h-12 hidden md:flex justify-center items-center space-x-6 text-xs font-medium">
+                <a href="gioi-thieu.html" class="hover:text-green-400 uppercase tracking-wider">Thương hiệu</a>
+                <a href="mid-season-sale.html" class="hover:text-green-400 uppercase tracking-wider text-red-400">Mid Season Sale</a>
+                <a href="blog.html" class="hover:text-green-400 uppercase tracking-wider">Blog</a>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white shadow-lg">
+             <a href="index.html" class="block py-2 text-green-500">Trang chủ</a>
+             <a href="san-pham.html" class="block py-2 text-gray-600 hover:text-green-500">Sản phẩm</a>
+             <a href="new-arrival.html" class="block py-2 text-gray-600 hover:text-green-500">New Arrival</a>
+             <a href="blog.html" class="block py-2 text-gray-600 hover:text-green-500">Blog</a>
+        </div>
+    </header>
+
+    <main class="pt-56">
+        <section id="home-banners" class="mb-12">
+            <div class="swiper main-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="img/banner-1.jpg" alt="Fashion Banner 1"></div>
+                    <div class="swiper-slide"><img src="img/banner-2.jpg" alt="Fashion Banner 2"></div>
+                    <div class="swiper-slide"><img src="img/banner-3.jpg" alt="Fashion Banner 3"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="py-4 bg-white">
+                 <h3 class="text-center text-gray-500 text-sm font-semibold mb-4 uppercase tracking-widest">Thương Hiệu Phân Phối</h3>
+                 <div class="swiper brands-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide"><img src="img/logo-guess.png" alt="Guess"></div>
+                        <div class="swiper-slide"><img src="img/logo-levis.png" alt="Levi's"></div>
+                        <div class="swiper-slide"><img src="img/logo-mango.png" alt="Mango"></div>
+                        <div class="swiper-slide"><img src="img/logo-nike.png" alt="Nike"></div>
+                        <div class="swiper-slide"><img src="img/logo-newera.png" alt="New Era"></div>
+                        <div class="swiper-slide"><img src="img/logo-karl.png" alt="Karl Lagerfeld"></div>
+                        <div class="swiper-slide"><img src="img/logo-polo.png" alt="Polo Ralph Lauren"></div>
+                        <div class="swiper-slide"><img src="img/logo-tommy.png" alt="Tommy Hilfiger"></div>
+                    </div>
+                 </div>
+            </div>
+             <div class="container mx-auto px-6 mt-8">
+                 <div class="swiper voucher-slider rounded-lg shadow-md overflow-hidden">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/voucher-1.jpg" alt="Voucher 1" class="w-full h-auto"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/voucher-2.jpg" alt="Voucher 2" class="w-full h-auto"></a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#"><img src="img/voucher-3.jpg" alt="Voucher 3" class="w-full h-auto"></a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </section>
+        
+        <section id="collections" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12 animate-on-scroll">Bộ Sưu Tập Mới Nhất</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group animate-on-scroll product-card">
+                        <a href="chi-tiet-san-pham.html" class="block">
+                            <div class="relative">
+                                <img src="img/product-1.jpg" alt="Sản phẩm 1" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 aspect-[4/5]">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold">Váy Hoa Mùa Xuân</h3>
+                                <p class="text-green-600 font-bold mt-2">1.250.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group animate-on-scroll product-card">
+                        <a href="chi-tiet-san-pham.html" class="block">
+                            <div class="relative">
+                                <img src="img/product-2.jpg" alt="Sản phẩm 2" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 aspect-[4/5]">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold">Áo Thun Năng Động</h3>
+                                <p class="text-green-600 font-bold mt-2">499.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group animate-on-scroll product-card">
+                        <a href="chi-tiet-san-pham.html" class="block">
+                            <div class="relative">
+                                <img src="img/product-3.jpg" alt="Sản phẩm 3" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 aspect-[4/5]">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold">Áo Khoác Thu Đông</h3>
+                                <p class="text-green-600 font-bold mt-2">2.100.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                     <div class="bg-white rounded-lg shadow-lg overflow-hidden group animate-on-scroll product-card">
+                        <a href="chi-tiet-san-pham.html" class="block">
+                            <div class="relative">
+                                <img src="img/product-4.jpg" alt="Sản phẩm 4" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 aspect-[4/5]">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold">Quần Jeans Bụi Bặm</h3>
+                                <p class="text-green-600 font-bold mt-2">980.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group animate-on-scroll product-card">
+                        <a href="chi-tiet-san-pham.html" class="block">
+                            <div class="relative">
+                                <img src="img/product-5.jpg" alt="Sản phẩm 5" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 aspect-[4/5]">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold">Giày Thể Thao</h3>
+                                <p class="text-green-600 font-bold mt-2">1.800.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group animate-on-scroll product-card">
+                        <a href="chi-tiet-san-pham.html" class="block">
+                            <div class="relative">
+                                <img src="img/product-6.jpg" alt="Sản phẩm 6" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 aspect-[4/5]">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold">Túi Xách Da</h3>
+                                <p class="text-green-600 font-bold mt-2">2.500.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group animate-on-scroll product-card">
+                        <a href="chi-tiet-san-pham.html" class="block">
+                            <div class="relative">
+                                <img src="img/product-7.jpg" alt="Sản phẩm 7" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 aspect-[4/5]">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold">Sơ Mi Lụa</h3>
+                                <p class="text-green-600 font-bold mt-2">1.550.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden group animate-on-scroll product-card">
+                        <a href="chi-tiet-san-pham.html" class="block">
+                            <div class="relative">
+                                <img src="img/product-8.jpg" alt="Sản phẩm 8" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110 aspect-[4/5]">
+                            </div>
+                            <div class="p-4 text-center">
+                                <h3 class="text-lg font-semibold">Đầm Dự Tiệc</h3>
+                                <p class="text-green-600 font-bold mt-2">3.200.000₫</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="text-center mt-12 animate-on-scroll">
+                    <a href="san-pham.html" class="inline-block bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                        Xem thêm sản phẩm
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-300">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="col-span-1 lg:col-span-2">
+                    <h2 class="text-white text-2xl font-bold mb-4">4SEASON</h2>
+                    <p class="text-sm mb-4">Nhà phân phối chính hãng các thương hiệu quốc tế hàng đầu Việt Nam.</p>
+                    <p class="text-sm"><i class="fas fa-map-marker-alt w-4 mr-2"></i>Lầu 12, tòa nhà Sonatus, 15 Lê Thánh Tôn, P. Bến Nghé, Q.1, TP.HCM</p>
+                    <p class="text-sm"><i class="fas fa-phone-alt w-4 mr-2"></i>1900 3038 (9:00-22:00)</p>
+                    <img src="img/bo-cong-thuong.png" alt="Bộ Công Thương" class="mt-4 h-12">
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Về 4Season</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Giới thiệu</a></li>
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Chương trình khách hàng</a></li>
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Hệ thống cửa hàng</a></li>
+                        <li><a href="blog.html" class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Hỗ trợ khách hàng</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="ho-tro-khach-hang.html#thong-tin-lien-he" class="hover:text-white">Thông tin liên hệ</a></li>
+                        <li><a href="ho-tro-khach-hang.html#huong-dan-dat-hang" class="hover:text-white">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="ho-tro-khach-hang.html#chinh-sach-giao-hang" class="hover:text-white">Chính sách giao hàng</a></li>
+                        <li><a href="ho-tro-khach-hang.html#chinh-sach-bao-mat" class="hover:text-white">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Kết nối</h3>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <h3 class="text-white font-semibold mb-2">Tải App</h3>
+                    <div class="flex space-x-2">
+                         <a href="#"><img src="img/google-play.png" alt="Google Play" class="h-10"></a>
+                         <a href="#"><img src="img/app-store.png" alt="App Store" class="h-10"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-900 py-4">
+            <div class="container mx-auto px-6 text-center text-xs">
+                &copy; COPYRIGHT 2025 - Công ty TNHH Thời Trang & Mỹ Phẩm 4Season.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SwiperJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Local Script -->
+    <script src="script.js"></script>
+</body>
+</html>
+

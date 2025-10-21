@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - 4Season</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-40 bg-white shadow-md">
+        <div class="bg-black text-white text-xs font-light">
+            <div class="container mx-auto px-6 h-8 flex justify-between items-center">
+                <a href="#" class="hover:text-gray-300"><i class="fas fa-map-marker-alt mr-2"></i>Hệ thống cửa hàng</a>
+                <span class="hidden md:block">Nhà phân phối chính hãng các thương hiệu quốc tế hàng đầu Việt Nam</span>
+                <a href="#" class="hover:text-gray-300"><i class="fas fa-globe mr-2"></i>Chọn khu vực</a>
+            </div>
+        </div>
+        <div class="border-b">
+             <div class="container mx-auto px-6 py-6 text-center">
+                <a href="index.html" id="main-logo" class="text-6xl tracking-widest">4SEASON</a>
+            </div>
+        </div>
+        <div class="border-b">
+            <div class="container mx-auto px-6 h-14 flex justify-between items-center text-sm font-medium text-gray-700">
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="hover:text-green-600 text-lg"><i class="fas fa-home"></i></a>
+                    <a href="san-pham.html" class="hover:text-green-600 uppercase tracking-wider">Sản phẩm</a>
+                    <a href="new-arrival.html" class="hover:text-green-600 uppercase tracking-wider">New Arrival</a>
+                    <a href="san-pham.html" class="hover:text-green-600 uppercase tracking-wider">Best Choice</a>
+                </div>
+                <div class="flex items-center space-x-5">
+                    <div class="relative hidden lg:block">
+                        <input type="text" placeholder="Tìm sản phẩm, thương hiệu..." class="border rounded-full py-2 px-4 w-64 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-search"></i></span>
+                    </div>
+                    <a href="dang-nhap.html" class="text-gray-600 hover:text-green-600 text-xl"><i class="fas fa-user"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-green-600 relative text-xl block">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-green-500">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 h-12 hidden md:flex justify-center items-center space-x-6 text-xs font-medium">
+                <a href="#" class="hover:text-green-400 uppercase tracking-wider">Thương hiệu</a>
+                <a href="san-pham.html" class="hover:text-green-400 uppercase tracking-wider text-red-400">Mid Season Sale</a>
+                <a href="blog.html" class="text-green-400 uppercase tracking-wider">Blog</a>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white shadow-lg">
+             <a href="index.html" class="block py-2 text-gray-600 hover:text-green-500">Trang chủ</a>
+             <a href="san-pham.html" class="block py-2 text-gray-600 hover:text-green-500">Sản phẩm</a>
+             <a href="new-arrival.html" class="block py-2 text-gray-600 hover:text-green-500">New Arrival</a>
+             <a href="blog.html" class="block py-2 text-green-500">Blog</a>
+        </div>
+    </header>
+
+    <main class="pt-56">
+        <div class="container mx-auto px-6 py-8">
+            <div class="text-sm text-gray-500 mb-8">
+                <a href="index.html" class="hover:text-green-600">Trang chủ</a> &gt; <span>Blog</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                <div class="blog-card">
+                    <a href="#" class="block">
+                        <img src="img/blog-1.jpg" alt="Blog post image" class="w-full mb-4 rounded-lg aspect-[4/3] object-cover">
+                        <p class="blog-category">Sao và Style</p>
+                        <h2 class="blog-title">Thời trang sân bay của Irene chính là kim chỉ nam để có một chuyến đi chuẩn xu hướng</h2>
+                        <p class="blog-excerpt">Không chỉ chinh phục khán giả bằng tài năng và nhan sắc, Irene (Red Velvet) còn chứng minh đẳng cấp...</p>
+                        <span class="blog-readmore">Xem thêm</span>
+                    </a>
+                </div>
+                <div class="blog-card">
+                    <a href="#" class="block">
+                        <img src="img/blog-2.jpg" alt="Blog post image" class="w-full mb-4 rounded-lg aspect-[4/3] object-cover">
+                        <p class="blog-category">Tin tức thời trang</p>
+                        <h2 class="blog-title">Thẻ Lì Xì "4Season Xịn Xò": Tặng voucher mua sắm 100.000 vnđ cho đơn đầu tiên</h2>
+                        <p class="blog-excerpt">I. Nội dung chương trình: Chương trình “4Season Xịn Xò” dành tặng khách mua sắm lần đầu tiên...</p>
+                        <span class="blog-readmore">Xem thêm</span>
+                    </a>
+                </div>
+                <div class="blog-card">
+                    <a href="#" class="block">
+                        <img src="img/blog-3.jpg" alt="Blog post image" class="w-full mb-4 rounded-lg aspect-[4/3] object-cover">
+                        <p class="blog-category">Sao và Style</p>
+                        <h2 class="blog-title">Cặp bạn thân Song Hye Kyo – Suzy và cách họ “đổi gió” thời trang với chiếc áo len tơ</h2>
+                        <p class="blog-excerpt">Trong làng giải trí châu Á, những cặp bạn thân đình đám thường gây chú ý bởi tình bạn thân...</p>
+                        <span class="blog-readmore">Xem thêm</span>
+                    </a>
+                </div>
+                <div class="blog-card">
+                    <a href="#" class="block">
+                        <img src="img/blog-4.jpg" alt="Blog post image" class="w-full mb-4 rounded-lg aspect-[4/3] object-cover">
+                        <p class="blog-category">Tin tức thời trang</p>
+                        <h2 class="blog-title">SWAROVSKI MỪNG NGÀY PHỤ NỮ VIỆT NAM VỚI CHƯƠNG TRÌNH QUÀ TẶNG BỘ GƯƠNG LƯỢC</h2>
+                        <p class="blog-excerpt">Với mong muốn tôn vinh vẻ đẹp của người phụ nữ Việt Nam, Swarovski dành tặng những món quà...</p>
+                        <span class="blog-readmore">Xem thêm</span>
+                    </a>
+                </div>
+                 <div class="blog-card">
+                    <a href="#" class="block">
+                        <img src="img/blog-5.jpg" alt="Blog post image" class="w-full mb-4 rounded-lg aspect-[4/3] object-cover">
+                        <p class="blog-category">Xu hướng</p>
+                        <h2 class="blog-title">Học phối đồ chấm bi chuẩn fashionista hiện nay</h2>
+                        <p class="blog-excerpt">Họa tiết chấm bi luôn là biểu tượng của sự cổ điển và nữ tính, mang đến vẻ ngoài thanh lịch...</p>
+                        <span class="blog-readmore">Xem thêm</span>
+                    </a>
+                </div>
+                 <div class="blog-card">
+                    <a href="#" class="block">
+                        <img src="img/blog-6.jpg" alt="Blog post image" class="w-full mb-4 rounded-lg aspect-[4/3] object-cover">
+                        <p class="blog-category">Sale & Outlet</p>
+                        <h2 class="blog-title">GUESS ƯU ĐÃI HẤP DẪN, GIẢM LÊN ĐẾN 50%++ CÁC THIẾT KẾ CAO CẤP</h2>
+                        <p class="blog-excerpt">Đừng bỏ lỡ cơ hội sở hữu những item thời trang đẳng cấp từ thương hiệu GUESS với chương trình...</p>
+                        <span class="blog-readmore">Xem thêm</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 flex justify-center">
+                <nav class="flex items-center space-x-2">
+                    <a href="#" class="px-3 py-1 rounded-md text-gray-500 hover:bg-gray-200"><i class="fas fa-chevron-left"></i></a>
+                    <a href="#" class="px-3 py-1 rounded-md bg-black text-white">1</a>
+                    <a href="#" class="px-3 py-1 rounded-md text-gray-700 hover:bg-gray-200">2</a>
+                    <a href="#" class="px-3 py-1 rounded-md text-gray-700 hover:bg-gray-200">3</a>
+                    <span class="px-3 py-1">...</span>
+                    <a href="#" class="px-3 py-1 rounded-md text-gray-700 hover:bg-gray-200">10</a>
+                    <a href="#" class="px-3 py-1 rounded-md text-gray-500 hover:bg-gray-200"><i class="fas fa-chevron-right"></i></a>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-gray-300 mt-16">
+        <div class="container mx-auto px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="col-span-1 lg:col-span-2">
+                    <h2 class="text-white text-2xl font-bold mb-4">4SEASON</h2>
+                    <p class="text-sm mb-4">Nhà phân phối chính hãng các thương hiệu quốc tế hàng đầu Việt Nam.</p>
+                    <p class="text-sm"><i class="fas fa-map-marker-alt w-4 mr-2"></i>Lầu 12, tòa nhà Sonatus, 15 Lê Thánh Tôn, P. Bến Nghé, Q.1, TP.HCM</p>
+                    <p class="text-sm"><i class="fas fa-phone-alt w-4 mr-2"></i>1900 3038 (9:00-22:00)</p>
+                    <img src="img/bo-cong-thuong.png" alt="Bộ Công Thương" class="mt-4 h-12">
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Về 4Season</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Giới thiệu</a></li>
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Chương trình khách hàng</a></li>
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Hệ thống cửa hàng</a></li>
+                        <li><a href="blog.html" class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Hỗ trợ khách hàng</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="ho-tro-khach-hang.html#thong-tin-lien-he" class="hover:text-white">Thông tin liên hệ</a></li>
+                        <li><a href="ho-tro-khach-hang.html#huong-dan-dat-hang" class="hover:text-white">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="ho-tro-khach-hang.html#chinh-sach-giao-hang" class="hover:text-white">Chính sách giao hàng</a></li>
+                        <li><a href="ho-tro-khach-hang.html#chinh-sach-bao-mat" class="hover:text-white">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Kết nối</h3>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <h3 class="text-white font-semibold mb-2">Tải App</h3>
+                    <div class="flex space-x-2">
+                         <a href="#"><img src="img/google-play.png" alt="Google Play" class="h-10"></a>
+                         <a href="#"><img src="img/app-store.png" alt="App Store" class="h-10"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-900 py-4">
+            <div class="container mx-auto px-6 text-center text-xs">
+                &copy; COPYRIGHT 2025 - Công ty TNHH Thời Trang & Mỹ Phẩm 4Season.
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+

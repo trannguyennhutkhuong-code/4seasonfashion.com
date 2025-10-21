@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán - 4Season</title>
+    
+    <!-- Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Local Files -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 text-gray-800 page-checkout">
+
+    <!-- Header (Full version) -->
+    <header class="fixed top-0 w-full z-40 bg-white shadow-md">
+        <div class="bg-black text-white text-xs font-light">
+            <div class="container mx-auto px-6 h-8 flex justify-between items-center">
+                <a href="gioi-thieu.html" class="hover:text-gray-300"><i class="fas fa-map-marker-alt mr-2"></i>Hệ thống cửa hàng</a>
+                <span class="hidden md:block">Nhà phân phối chính hãng các thương hiệu quốc tế hàng đầu Việt Nam</span>
+                <a href="#" class="hover:text-gray-300"><i class="fas fa-globe mr-2"></i>Chọn khu vực</a>
+            </div>
+        </div>
+        <div class="border-b">
+             <div class="container mx-auto px-6 py-6 text-center">
+                <a href="index.html" id="main-logo" class="text-6xl tracking-widest">4SEASON</a>
+            </div>
+        </div>
+        <div class="border-b">
+            <div class="container mx-auto px-6 h-14 flex justify-between items-center text-sm font-medium text-gray-700">
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="index.html" class="hover:text-green-600 text-lg"><i class="fas fa-home"></i></a>
+                    <a href="san-pham.html" class="hover:text-green-600 uppercase tracking-wider">Sản phẩm</a>
+                    <a href="new-arrival.html" class="hover:text-green-600 uppercase tracking-wider">New Arrival</a>
+                    <a href="san-pham.html" class="hover:text-green-600 uppercase tracking-wider">Best Choice</a>
+                </div>
+                <div class="flex items-center space-x-5">
+                    <div class="relative hidden lg:block">
+                        <input type="text" placeholder="Tìm sản phẩm, thương hiệu..." class="border rounded-full py-2 px-4 w-64 text-sm focus:outline-none focus:ring-2 focus:ring-green-400">
+                        <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"><i class="fas fa-search"></i></span>
+                    </div>
+                    <a href="dang-nhap.html" class="text-gray-600 hover:text-green-600 text-xl"><i class="fas fa-user"></i></a>
+                    <a href="gio-hang.html" class="text-gray-600 hover:text-green-600 relative text-xl block">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span id="cart-count" class="absolute -top-2 -right-2 bg-green-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">0</span>
+                    </a>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-green-500">
+                        <i class="fas fa-bars fa-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="bg-gray-800 text-white">
+            <div class="container mx-auto px-6 h-12 hidden md:flex justify-center items-center space-x-6 text-xs font-medium">
+                <a href="gioi-thieu.html" class="hover:text-green-400 uppercase tracking-wider">Thương hiệu</a>
+                <a href="mid-season-sale.html" class="hover:text-green-400 uppercase tracking-wider text-red-400">Mid Season Sale</a>
+                <a href="blog.html" class="hover:text-green-400 uppercase tracking-wider">Blog</a>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 bg-white shadow-lg">
+             <a href="index.html" class="block py-2 text-gray-600 hover:text-green-500">Trang chủ</a>
+             <a href="san-pham.html" class="block py-2 text-gray-600 hover:text-green-500">Sản phẩm</a>
+             <a href="new-arrival.html" class="block py-2 text-gray-600 hover:text-green-500">New Arrival</a>
+             <a href="blog.html" class="block py-2 text-gray-600 hover:text-green-500">Blog</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 pt-64">
+        <h1 class="text-3xl font-bold mb-8">Thanh Toán</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Column: Shipping & Payment -->
+            <div class="lg:col-span-2 space-y-6">
+                <!-- Shipping Address -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-bold mb-4 text-green-600"><i class="fas fa-map-marker-alt mr-2"></i>Địa Chỉ Nhận Hàng</h2>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <p class="font-bold">Trần Nguyễn Nhựt Khương (+84) 373422327</p>
+                            <p class="text-gray-600">72A thượng thâu thanh H.26 tổ 2, Long thành trung hoà thành Tây ninh, Phường Long Thành Trung, Thị xã Hòa Thành, Tây Ninh</p>
+                        </div>
+                        <button class="text-sm text-blue-500 hover:underline">Thay đổi</button>
+                    </div>
+                </div>
+
+                <!-- Product List -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center mb-4 pb-4 border-b">
+                        <h2 class="text-xl font-bold">Sản phẩm</h2>
+                        <div class="grid grid-cols-3 gap-4 text-sm text-gray-500 text-right">
+                           <span>Đơn giá</span>
+                           <span>Số lượng</span>
+                           <span>Thành tiền</span>
+                        </div>
+                    </div>
+                    <div id="checkout-items-list" class="space-y-4">
+                        <!-- Checkout items will be injected here -->
+                    </div>
+                </div>
+
+                <!-- Payment Method -->
+                 <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex justify-between items-center">
+                        <h2 class="text-xl font-bold">Phương thức thanh toán</h2>
+                        <button class="text-sm text-blue-500 hover:underline">Thay đổi</button>
+                    </div>
+                    <p class="mt-2">Thanh toán khi nhận hàng</p>
+                </div>
+            </div>
+
+            <!-- Right Column: Order Summary -->
+            <div class="lg:col-span-1">
+                <div class="bg-white p-6 rounded-lg shadow-md sticky top-64">
+                    <h2 class="text-xl font-bold mb-4">Tóm Tắt Đơn Hàng</h2>
+                     <div class="space-y-2 mb-4">
+                        <div class="flex justify-between">
+                            <span>Mã giảm giá</span>
+                            <a href="#" class="text-blue-500 text-sm">Chọn Voucher</a>
+                        </div>
+                    </div>
+                    <div class="border-t pt-4 space-y-2">
+                        <div class="flex justify-between text-gray-700">
+                            <span>Tạm tính</span>
+                            <span id="checkout-subtotal">0₫</span>
+                        </div>
+                        <div class="flex justify-between text-gray-700">
+                            <span>Phí vận chuyển</span>
+                            <span id="checkout-shipping">0₫</span>
+                        </div>
+                        <div class="flex justify-between font-bold text-xl mt-2">
+                            <span>Tổng cộng</span>
+                            <span id="checkout-total" class="text-red-600">0₫</span>
+                        </div>
+                    </div>
+                    <button class="w-full mt-6 bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded-lg transition-colors">
+                        ĐẶT HÀNG
+                    </button>
+                     <p class="text-xs text-gray-500 mt-4 text-center">Nhấn "Đặt hàng" đồng nghĩa với việc bạn đồng ý tuân theo <a href="#" class="text-blue-500">Điều khoản của 4Season</a>.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+     <footer class="bg-black text-gray-300 mt-16">
+        <div class="container mx-auto px-6 py-16">
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+                <div class="col-span-1 lg:col-span-2">
+                    <h2 class="text-white text-2xl font-bold mb-4">4SEASON</h2>
+                    <p class="text-sm mb-4">Nhà phân phối chính hãng các thương hiệu quốc tế hàng đầu Việt Nam.</p>
+                    <p class="text-sm"><i class="fas fa-map-marker-alt w-4 mr-2"></i>Lầu 12, tòa nhà Sonatus, 15 Lê Thánh Tôn, P. Bến Nghé, Q.1, TP.HCM</p>
+                    <p class="text-sm"><i class="fas fa-phone-alt w-4 mr-2"></i>1900 3038 (9:00-22:00)</p>
+                    <img src="img/bo-cong-thuong.png" alt="Bộ Công Thương" class="mt-4 h-12">
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Về 4Season</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Giới thiệu</a></li>
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Chương trình khách hàng</a></li>
+                        <li><a href="gioi-thieu.html" class="hover:text-white">Hệ thống cửa hàng</a></li>
+                        <li><a href="blog.html" class="hover:text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Hỗ trợ khách hàng</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="ho-tro-khach-hang.html#thong-tin-lien-he" class="hover:text-white">Thông tin liên hệ</a></li>
+                        <li><a href="ho-tro-khach-hang.html#huong-dan-dat-hang" class="hover:text-white">Hướng dẫn đặt hàng</a></li>
+                        <li><a href="ho-tro-khach-hang.html#chinh-sach-giao-hang" class="hover:text-white">Chính sách giao hàng</a></li>
+                        <li><a href="ho-tro-khach-hang.html#chinh-sach-bao-mat" class="hover:text-white">Chính sách bảo mật</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Kết nối</h3>
+                    <div class="flex space-x-3 mb-4">
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-xl hover:text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <h3 class="text-white font-semibold mb-2">Tải App</h3>
+                    <div class="flex space-x-2">
+                         <a href="#"><img src="img/google-play.png" alt="Google Play" class="h-10"></a>
+                         <a href="#"><img src="img/app-store.png" alt="App Store" class="h-10"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-gray-900 py-4">
+            <div class="container mx-auto px-6 text-center text-xs">
+                &copy; COPYRIGHT 2025 - Công ty TNHH Thời Trang & Mỹ Phẩm 4Season.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
